@@ -43,9 +43,7 @@ pipeline {
             steps {
                 // Ensure core-js and core-js-pure are updated before installing other dependencie
                 sh 'npm install core-js@latest core-js-pure@latest'
-                sh 'npm audit'
-                sh 'npm audit fix'
-                sh 'npm audit fix --force'
+                sh "npm install"
             }
         }
         stage('TRIVY FS SCAN') {
